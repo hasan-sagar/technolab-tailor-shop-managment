@@ -13,10 +13,16 @@
                             <span>Dashboard</span>
                         </a>
                     </li>
+                    <li class="{{ Request::path() == 'allOrderList' ? 'active' : '' }}">
+                        <a href="{{ route('all.orders') }}">
+                            <i class="icon-Bullet-list"><span class="path1 "></span><span class="path2"></span></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
                     <li class="{{ Request::path() == 'order' ? 'active' : '' }}">
-                        <a href="{{ route('order') }}" class="text-success">
-                            <i class="fas fa-cash-register text-success" style="font-size: 18px"><span class="path1 "></span><span class="path2"></span></i>
-                            <span style="font-weight: bold">Create Order</span>
+                        <a href="{{ route('order') }}">
+                            <i class="fas fa-cash-register"><span class="path1 "></span><span class="path2"></span></i>
+                            <span>Create Order</span>
                         </a>
                     </li>
                     <li class="header">System Apps</li>

@@ -8,7 +8,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="{{ asset('images/favicon.ico') }}">
-
     <title>Tailor Shop Managment</title>
 
     <!-- Vendors Style-->
@@ -17,7 +16,9 @@
     <!-- Style-->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/skin_color.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -1387,7 +1388,7 @@
     <script src="{{ asset('js/pages/dashboard.js') }}"></script>
     <script src="{{ asset('js/pages/calendar.js') }}"></script>
     <script src="{{ asset('js/pages/timeline.js') }}"></script>
-    <script src="{{asset('assets/vendor_components/datatable/datatables.min.js')}}"></script>
+    <script src="{{ asset('assets/vendor_components/datatable/datatables.min.js') }}"></script>
     <script src="{{ asset('js/pages/data-table.js') }}"></script>
     <script src="{{ asset('assets/vendor_components/OwlCarousel2/dist/owl.carousel.js') }}"></script>
     <script src="{{ asset('js/pages/widget-blog.js') }}"></script>

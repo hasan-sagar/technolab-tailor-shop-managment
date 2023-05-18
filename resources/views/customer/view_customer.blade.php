@@ -14,7 +14,7 @@
                     </nav>
                 </div>
             </div>
-            
+
             <h3 class="page-title float-right">
                 <a href="{{ route('add.customer') }}" class="waves-effect waves-light btn btn-primary"><i
                         class="fa fa-plus me-2"></i> Add
@@ -30,8 +30,7 @@
                 <div class="box">
                     <div class="box-body">
                         <div class="table-responsive">
-                            <table id="complex_header" class="table table-striped display"
-                                style="width:100%">
+                            <table id="complex_header" class="table table-striped display" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th>Sl</th>
@@ -58,9 +57,11 @@
                                             <td>{{ $item->address }}</td>
                                             <td class="text-center">
                                                 <div class="list-icons d-inline-flex">
-                                                    <a href="{{ route('edit.customer', $item->id) }}" class="list-icons-item me-15"><i
+                                                    <a href="{{ route('edit.customer', $item->id) }}"
+                                                        class="list-icons-item me-15"><i
                                                             class="fa fa-pencil text-success"></i></a>
-                                                    <a href="{{route('delete.customer',$item->id)}}" class="list-icons-item"><i
+                                                    <a href="{{ route('delete.customer', $item->id) }}"
+                                                        class="list-icons-item"><i
                                                             class="fa fa-trash-o text-danger"></i></a>
                                                 </div>
                                             </td>

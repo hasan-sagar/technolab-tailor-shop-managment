@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PosController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\InvoiceController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -76,10 +77,12 @@ Route::middleware('auth')->group(function () {
         Route::post('/updateCart/{rowId}', 'UpadateItemQuantity')->name('update.cart');
         Route::get('/removeCartItem/{rowId}', 'RemoveItemFromCart')->name('remove.cart');
         Route::post('/createOrder', 'CreateOrder')->name('create.order');
-        Route::post('/product-checkout', 'CreateInvoice')->name('product.checkout');
-        Route::get('/allCart', 'AllCart');
+        Route::get('/orders-list','AllOrdersList')->name('all.orders');
     });
-    //ORDER
+    //ORDER INVOICE
+    Route::controller(InvoiceController::class)->group(function () {
+        Route::get('/order/invoice/{orderId}', 'OrderDetailsInvoice')->name('order.invoice');
+    });
 
     //Measurment Guide
     Route::get('/measurment/guide', function () {
