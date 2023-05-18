@@ -78,6 +78,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/removeCartItem/{rowId}', 'RemoveItemFromCart')->name('remove.cart');
         Route::post('/createOrder', 'CreateOrder')->name('create.order');
         Route::get('/orders-list','AllOrdersList')->name('all.orders');
+        Route::post('/orders-status-update/{id}','OrderaStatusUpdate')->name('order.status.update');
     });
     //ORDER INVOICE
     Route::controller(InvoiceController::class)->group(function () {

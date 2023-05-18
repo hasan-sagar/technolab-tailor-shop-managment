@@ -95,4 +95,17 @@ class OrderController extends Controller
         $allOrderslist = Order::latest()->get();
         return view('order.all_order_list',compact('allOrderslist'));
     }
+
+    public function OrderaStatusUpdate(Request $request,$id)
+    {
+        $status = $request->order_status;
+        $order = Order::findOrFail($id)->update([
+            'order_status'=> $status
+        ]);
+        $notification = array(
+            'message'=>'Order Status Updated',
+            'alert-type'=>'success'
+        );
+        return redirect()->back()->with($notification);
+    }
 }

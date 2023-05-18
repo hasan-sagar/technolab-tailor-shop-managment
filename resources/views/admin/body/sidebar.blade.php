@@ -13,7 +13,7 @@
                             <span>Dashboard</span>
                         </a>
                     </li>
-                    <li class="{{ Request::path() == 'allOrderList' ? 'active' : '' }}">
+                    <li class="{{ Request::path() == 'orders-list' ? 'active' : '' }}">
                         <a href="{{ route('all.orders') }}">
                             <i class="icon-Bullet-list"><span class="path1 "></span><span class="path2"></span></i>
                             <span>Orders</span>

@@ -21,7 +21,6 @@
                                         <th>Invoice No.</th>
                                         <th>Status</th>
                                         <th>Customer</th>
-                                        <th>Status</th>
                                         <th>Priority</th>
                                         <th>Issue date</th>
                                         <th>Delivery date</th>
@@ -35,15 +34,25 @@
                                             <td>{{ $key++ }}</td>
                                             <td>{{ $item->invoice_no }}</td>
                                             <td>
-                                                <select name="status" class="form-select w-100"
-                                                    data-placeholder="Select status">
-                                                    <option value="overdue">Overdue</option>
-                                                    <option value="hold">On hold</option>
-                                                    <option value="pending" selected="">Pending</option>
-                                                    <option value="paid">Paid</option>
-                                                    <option value="invalid">Invalid</option>
-                                                    <option value="cancel">Canceled</option>
-                                                </select>
+                                                <form action="{{ route('order.status.update', $item->id) }}" method="POST">
+                                                    @csrf
+                                                    <select onchange="form.submit()" name="order_status"
+                                                        class="form-select w-120" data-placeholder="Select status">
+                                                        <option
+                                                            value="Pending"{{ $item->order_status == 'Pending' ? 'selected' : '' }}>
+                                                            {{ $item->order_status }}</option>
+                                                        <option value="Preparing"
+                                                            {{ $item->order_status == 'Preparing' ? 'selected' : '' }}>
+                                                            Preparing
+                                                        </option>
+                                                        <option value="Complete"
+                                                            {{ $item->order_status == 'Complete' ? 'selected' : '' }}>
+                                                            Complete</option>
+                                                        <option value="Ready"
+                                                            {{ $item->order_status == 'Ready' ? 'selected' : '' }}>Ready
+                                                        </option>
+                                                    </select>
+                                                </form>
                                             </td>
                                             <td>
                                                 <h6 class="mb-0">
@@ -51,10 +60,6 @@
                                                     <span class="d-block text-muted">Payment method:
                                                         {{ $item->payment_method }}</span>
                                                 </h6>
-                                            </td>
-                                            <td>
-                                                <span class="">{{ $item->order_status }}</span>
-                                            </td>
                                             <td>
                                                 <span
                                                     class="{{ $item->priority == 'Urgent' ? 'badge badge-danger-light' : '' }}">
@@ -91,8 +96,7 @@
                                             <td class="text-center">
                                                 <div class="list-icons d-inline-flex">
                                                     <a href="{{ route('order.invoice', $item->id) }}"
-                                                        class="list-icons-item me-10"><i
-                                                            class="fas fa-file-text-o"></i></a>
+                                                        class="list-icons-item me-10"><i class="fas fa-file-text-o"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
